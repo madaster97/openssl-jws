@@ -1,0 +1,15 @@
+{
+  "name": "openssl-jws",
+  "version": "1.0.0",
+  "description": "An attempt to call openssl for ES256 JWS signing/validation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "base64url": "^3.0.1",
+    "jose": "^2.0.4"
+  }
+}
