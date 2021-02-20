@@ -16,20 +16,21 @@ const jwk = {
 
 // Parse JWT and save items
 const [b64Header, b64Body, b64Sign] = jwt.split('.');
+const out = path.join(__dirname,'out');
 
 // Save payload
 const payload = [b64Header, b64Body].join('.');
-const payloadPath = path.join(__dirname, 'data')
+const payloadPath = path.join(out, 'data')
 fs.writeFileSync(payloadPath, payload, { encoding: 'utf-8' });
 
 // Write signature to file with B64 encoding
 const signature = b64url.toBase64(b64Sign);
-const signaturePath = path.join(__dirname, 'data.sig');
+const signaturePath = path.join(out, 'data.sig');
 fs.writeFileSync(signaturePath, signature, { encoding: 'base64' });
 
 // Save public key
 const key = JWK.asKey(jwk);
-const keyPath = path.join(__dirname, 'pubkey.pem');
+const keyPath = path.join(out, 'pubkey.pem');
 fs.writeFileSync(keyPath, key.toPEM());
 
 const cmd = `openssl dgst -verify ${keyPath} -signature ${signaturePath} ${payloadPath}`;

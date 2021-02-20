@@ -11,5 +11,8 @@
   "dependencies": {
     "base64url": "^3.0.1",
     "jose": "^2.0.4"
+  },
+  "repository": {
+    "url": "https://github.com/madaster97/openssl-jws"
   }
 }

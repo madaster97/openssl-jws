@@ -10,3 +10,5 @@ Error Verifying Data
 139722910762304:error:0D068066:asn1 encoding routines:asn1_check_tlen:bad object header:../crypto/asn1/tasn_dec.c:1118:
 139722910762304:error:0D07803A:asn1 encoding routines:asn1_item_embed_d2i:nested asn1 error:../crypto/asn1/tasn_dec.c:290:Type=ECDSA_SIG
 ```
+
+For signature creation, I attempted the methods in these articles ([1](https://learn.akamai.com/en-us/webhelp/iot/jwt-access-control/GUID-054028C7-1BF8-41A5-BD2E-A3E00F6CA550.html),[2](https://jumpnowtek.com/security/Code-signing-with-openssl.html),[3](https://gist.github.com/timmc/d2814d7da19521dda1883dd3cc046217)), but was not able to succesfully validate the signatures in JWT.IO (however, openssl is able to validate the signatures it creates).
