@@ -29,5 +29,5 @@ cat signature.hex | xxd -p -r | base64 | tr -d '\n=' | tr -- '+/' '-_' > signatu
 echo "$(cat data).$(cat signature.sig)" > token
 echo "https://jwt.io/#debugger-io?token=$(cat token)"
 echo "Paste public key into jwt.io"
-cat publickey.pemecho "https://jwt.io/#debugger-io?token=$(cat token)"
+cat publickey.pem
 ```
